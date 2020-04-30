@@ -94,17 +94,23 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 function mortgageCalculator3(p,i,n,c){
     if ( c > 740 ){
-        var c = ( i - ( i * 0.005 ));
+        i =  ( i -  0.005 );
     }
     else if ( c < 660 ){
-        var c = ( i + ( i * 0.005 ));
+        i = ( i +  0.005 );
     }
-    else{
-        var c = i;
-    }
-    return c;
+    let monthlyInterestRate2 = i / 12;
+    let periods2 = n * 12;
+
+    let numerator2 = monthlyInterestRate2 * (Math.pow((1 + monthlyInterestRate2), periods2));
+    let denominator2 = Math.pow((1 + monthlyInterestRate2),periods2) - 1;
+    let monthlyRate2 = (p * (numerator2 / denominator2)).toFixed(2);
+
+    console.log(`${name} , your monthly rate is $${monthlyRate2}`);
+
+
 }
-console.log(mortgageCalculator3(200000,0.05,30,800));
+mortgageCalculator3(200000,0.05,30,800);
 
 
 // 🏡 Task 6: Loops
@@ -124,21 +130,21 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 function variableInterestRate (p,i,n){
-    var i = 0.015;
+     i = ( i - 0.025 );
 
     for( let x = i; x < 10; x++ ){
         i += 0.005;
-    let monthlyInterestRate = i / 12;
-    let periods = n * 12;
-    let numerator = monthlyInterestRate * (Math.pow((1 + monthlyInterestRate), periods));
-    let denominator = Math.pow((1 + monthlyInterestRate),periods) - 1;
-    let monthlyRate = p * (numerator / denominator);
+    let monthlyInterestRate2 = i / 12;
+    let periods2 = n * 12;
+    let numerator2 = monthlyInterestRate2 * (Math.pow((1 + monthlyInterestRate2), periods2));
+    let denominator2 = Math.pow((1 + monthlyInterestRate2),periods2) - 1;
+    let monthlyRate2 = p * (numerator2 / denominator2);
 
-    console.log(`${name}, with an interest rate of ${i.toFixed(3)}, your monthly rate is $${Math.round(monthlyRate)}`);
+    console.log(`${name}, with an interest rate of ${i.toFixed(3)}, your monthly rate is $${Math.round(monthlyRate2)}`);
     
     }
 }
-variableInterestRate(200000,0.02,30);
+variableInterestRate(200000,0.04,30);
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
