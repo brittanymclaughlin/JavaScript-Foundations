@@ -4,7 +4,7 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-let principal = 200000;
+let principle = 200000;
 let interestRate = 0.05;
 let years = 30;
 let name = 'Brittany'; 
@@ -37,7 +37,7 @@ When your math is correct, monthlyRate will equal 1073.64
 
 let numerator = monthlyInterestRate * (Math.pow( ( 1 + monthlyInterestRate ) , periods ) );
 let denominator = Math.pow( ( 1 + monthlyInterestRate ), ( periods ) ) - 1;
-let monthlyRate = ( principal * ( numerator / denominator ) ).toFixed( 2 );
+let monthlyRate = ( principle * ( numerator / denominator ) ).toFixed( 2 );
 
 
 
@@ -49,7 +49,7 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 
 function mortgageCalculator(){
 
-    let principal = 200000;
+    let principle = 200000;
     let interestRate = 0.05;
     let years = 30;
     let monthlyInterestRate = interestRate / 12;
@@ -57,7 +57,7 @@ function mortgageCalculator(){
 
     let numerator = monthlyInterestRate * (Math.pow((1 + monthlyInterestRate), periods));
     let denominator = Math.pow((1 + monthlyInterestRate),periods) - 1;
-    let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
+    let monthlyRate = (principle * (numerator / denominator)).toFixed(2);
 
     console.log(`${name} , your monthly rate is $${monthlyRate}`);
 
@@ -79,7 +79,7 @@ function mortgageCalculator2(p,i,n){
     let denominator = Math.pow((1 + monthlyInterestRate),periods) - 1;
     let monthlyRate = (p * (numerator / denominator)).toFixed(2);
 
-    console.log(monthlyRate);
+    console.log(`${name} , your monthly rate is $${monthlyRate}!!!`);
 }
 mortgageCalculator2(200000,0.05,30);
 
@@ -157,6 +157,13 @@ variableInterestRate(200000,0.04,30);
 
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+
+
+var newP = prompt("What is the principle ?");
+var newI = prompt("What is your interest rate?");
+var newN = prompt("How many years is the loan for?")
+mortgageCalculator2(newP,newI,newN);
+alert("Thanks, your rates have been processed.");
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
